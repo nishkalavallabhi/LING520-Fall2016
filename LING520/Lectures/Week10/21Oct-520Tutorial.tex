@@ -1,0 +1,178 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\hypersetup{
+    colorlinks,%
+    citecolor=blue,%
+    filecolor=blue,%
+    linkcolor=blue,%
+    urlcolor=blue 
+    %urlcolor=mygreylink     % can put red here to better visualize the links
+}
+
+\author[Sowmya Vajjala]{Instructor: Sowmya Vajjala}
+
+\title[LING 520]{LING 520: Computational Analysis of English}
+\subtitle{Semester: FALL '16}
+
+\date{21 October 2016}
+
+\institute{Iowa State University, USA}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{frame}\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Class Outline}
+\begin{itemize}
+\item Practice with what to do before writing a program
+\item Reading a dictionary from a text file - My question to you
+%\item Probability and Programming - discussion
+%\item Programming exercises
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{What to do before writing a program}
+\begin{enumerate}
+\item Choosing the right data structure for a task
+\item Writing loops appropriately
+\end{enumerate}
+\end{frame} %20min
+
+\begin{frame}
+\frametitle{What to do before writing a program - Instructions}
+\begin{itemize}
+\item The idea of next few slides is to make you think through and analyze what you need to write a program that suits the problem description.
+\item You should not write programs. You should only try to work through the problem scenarios and come with some pseudo-code
+\item Pseudo-code: where you describe what are your variables, what kind of objects are they (string, list, dictionary etc), what are the loops you should have etc.
+\item Working in groups is encouraged. 
+\item Let us have 15-20 minutes for each question, and one person should come and explain their solution on whiteboard after that.
+\end{itemize}
+\pause Note: This may look "useless" and "theoretical", but you can never "apply" anything without knowing some "theory". 
+\end{frame}
+
+\begin{frame}
+\frametitle{When to use what data structure - 1}
+\framesubtitle{Morse Code}
+\begin{itemize}
+\item Task: a program to convert a sentence it into morse code.
+\item Questions to address before starting to program:
+\begin{enumerate}
+\item How will you take input from user?
+\item What information do you need to convert it to morse code? 
+\item How will that information be stored internally?
+\item How will the output be displayed to the user?
+\item Once you have answers, write the pseudo code - describing step by step how the program should look.
+\end{enumerate}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{When to use what data structure - 2}
+\framesubtitle{Ngram counting}
+\begin{itemize}
+\item Let us say all books written by Author 1 are collected and stored in a single file author1.txt, and all books written by Author 2 in author2.txt.
+\item There are two problems: a) list the most frequent 100 bigrams in each of these authors' writings. b) compare how many bigrams overlap between these authors.
+\item What sort of information will you compute while writing this program?
+\item Once you have the answer, write the pseudo code - describing step by step how the program should look.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{When to use what data structure - 3}
+\framesubtitle{POS Tagging}
+\begin{itemize}
+\item Let us say you have access to a large newspaper corpus, and your goal is to answer the following questions:
+\begin{enumerate}
+\item Problem 1: Find out which nouns are more commonly used in singular form and which are used in plural form.
+\item Problem 2: Which tags are nouns most commonly found after? What do these tags represent?
+\item Problem 3: How many words are ambiguous, in the sense that they appear with at least two tags?
+\end{enumerate}
+\item For all these problems, how will you design your solutions? What information do you need? What kind of data structures will you use to store data? 
+\item Once you have answers, write the pseudo code
+\end{itemize}
+Note: based on Exercises 15--18 in Chapter 5 of NLTK book
+\end{frame}
+
+\begin{frame}
+\frametitle{Writing Loops Appropriately -1}
+\framesubtitle{Duplicate items in lists}
+\begin{itemize}
+\item Problem: Write one program that takes a "list of numbers" as input from user, and prints out a list that shows numbers that repeat in this list. 
+\item If I input [1,2,33,2,33,11], my program should output [2,33].
+\item How will you solve this problem? What are the issues you may face? 
+\item Write your pseudo code.\pause
+\item In the code sample I will show now, there are two functions. Predict what they will print. (DuplicateItems.py)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Writing Loops Appropriately -2}
+\framesubtitle{}
+\begin{itemize}
+\item Problem 1: Program should take a string as input, and print every third character in the string, if it is not a 'a'. \pause
+\item Problem 2:  Program should take a string as input, and replace each character with the character that follows it in English alphabet (i.e., if input is "Peter", it should become "Qfufs")
+\item Again, think through and prepare a pseudo code. 
+\end{itemize}
+\pause ForIf.py
+\end{frame}
+
+\begin{frame}
+\frametitle{}
+calling a function from one program in another - skipping this as Stephanie showed it on Tuesday. We also discussed this in 516, if you remember. 
+\end{frame}
+
+\end{document}
+\begin{frame}
+\frametitle{Reading a saved dictionary}
+\begin{itemize}
+\item Question: How do you store a dictionary on to your hard disk? How will you access this dictionary in another program? How many people successfully did this? How?\pause
+\item Here is one way of doing it: dictionary-creation.py, dictionary-use.py
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Probability and Programming}
+\begin{itemize}
+\item Katrin Erk's code, line by line + more.
+\item Note: This is the best and most comprehensible code on this topic I found so far. You are more than welcome to find something easier than this and share with the class if you think I am wasting your time by repeatedly talking about this. 
+\end{itemize}
+%Go through the code line by line.
+\end{frame}
+
+\begin{frame}
+\frametitle{Programming exercise - 1}
+\begin{itemize}
+\item Take any .txt version file from gutenberg.org, written by your favorite author (in English!)
+\item Read that file into your python code, and do the following using NLTK:
+\begin{enumerate}
+\item Split the file into sentences.
+\item Print the following: number of sentences in the file, average sentence length (in number of words), average word length (in number of characters), number of unique words, number of unique stems.
+\item Note 1: Once sentence splitting is done, you can ignore punctuation markers for the rest of the calculation.
+\item Note 2: You can use any stemmer you want.
+\end{enumerate}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Programming exercise - 2}
+\begin{itemize}
+\item For the same file from last slide, do the following:
+\item Read that file into your python code, and do the following using NLTK:
+\begin{enumerate}
+\item Split the file into sentences.
+\item For each sentence, print its POS tagged version as a string of tags. E.g., if you have "It is a sentence" as your sentence, and your NLTK tagger outputs the tags for this sentence as a list (or tuple or whatever), you should print the tag as a string. E.g., PRP VBZ DT NN (not as [PRP, VBZ, DT, NN] or as [(It, PRP), (is, VBZ) .. ... ])
+\end{enumerate}
+\end{itemize}
+\end{frame}
+
+
+
+
+
+

@@ -1,0 +1,106 @@
+\documentclass{article}
+
+\addtolength{\headheight}{-3cm}
+\addtolength{\textheight}{7cm}
+\addtolength{\oddsidemargin}{-2cm}
+\addtolength{\textwidth}{4cm}
+
+\parindent0cm
+
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+
+\pagestyle{empty}
+
+\newcommand{\abox}{\raisebox{.6ex}[0ex][0ex]{\fbox{\phantom{\rule{.8ex}{.8ex}}}}}
+
+\begin{document}
+
+ENGL 520, Fall Semester 2016 \\ Instructor: Dr Sowmya Vajjala
+
+\bigskip
+  \mbox{}\hfill \textbf{Knowing the students Questionnaire} \hfill \mbox{}
+
+\smallskip
+
+\doublespacing
+\paragraph{Name \textmd{(please underline the name you'd like me to use)}:}
+
+\singlespacing 
+
+\paragraph{University Email address:} \underline{\hspace{3cm}} @iastate.edu
+
+
+\paragraph{Academic Background:}
+
+
+\paragraph{Current program:} Masters/PhD in \underline{\hspace{3cm}}
+
+
+\paragraph{Focus:} What are your research interests?
+
+
+\vspace{1.5cm}
+
+
+\paragraph{Motivation:}
+
+What motivated you to take this course apart from the degree requirements? 
+\vfill\vfill
+
+List the specific degree requirements you may need this course for, as well as any specific
+content issue you hope to get out of this class.
+
+\vfill\vfill
+
+
+Eventually, how do you plan to use what you learnt in this course?
+
+\vfill\vfill
+
+\paragraph{Linguistics background:}
+What background in linguistic analysis do you have (general,
+coursework, topics of term papers you've written, etc.)?  
+
+\vfill\vfill
+
+
+\paragraph{Programming background:}
+What background in computer science and programming
+do you have (general, coursework, etc.)?
+
+\vfill\mbox{}
+
+\paragraph{Course-specific background:}
+In case you have already taken taken courses (etc.) on topics related
+to programming, please list them here:
+
+
+\vfill\mbox{}
+
+\paragraph{Language background:}
+What languages are you fluent in? Will you be interested in doing some project/term paper considering one of the course topics and applying it to a new language? 
+
+
+\vfill\mbox{}
+
+\paragraph{Course Expectation}
+What do you expect to take away from the course? 
+\vfill\vfill
+
+Where do you think you can apply what you learnt here as an applied linguist?
+
+\vfill\vfill
+
+\paragraph{Optional Question:}
+How many courses are you enrolled in this semester (including this course)? 
+
+\end{document}
+
+
+
+
+
+
+
+

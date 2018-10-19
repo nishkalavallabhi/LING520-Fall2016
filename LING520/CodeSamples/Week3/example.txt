@@ -1,0 +1,6 @@
+This is a text.
+It has a couple of lines.
+I will use this to illustrate the use of regular expressions using python library re.
+RegEx can be magical sometimes
+and is difficult
+This is also new.

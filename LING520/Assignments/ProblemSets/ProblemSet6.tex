@@ -1,0 +1,26 @@
+
+\documentclass[11pt,a4paper]{article}
+\usepackage{url}
+
+\begin{document}
+\begin{center}
+  Fall Semester 2016 \\ Iowa State University\\[3ex]
+  {\large ENGL 520 - Computational Analysis of English}\\[3ex]
+  \textbf{Problem Set 6} \\ \textbf{NLP for CALL \\ (ungraded)}
+\end{center}
+
+\begin{enumerate}
+\item When people are learning a second language, they may still have some native language influence in their writing. Try to pick two or three such hypotheses for English learners (of any one native language background), and write a program that identifies such features in L2 writing.
+\item Learn to use a pre-existing spell checker in your program and identify spelling errors in the texts given as input to the program (figure out if there are any existing spell check programs available as perl or python libraries, or those that provide a interface to access their results programmatically!)
+\item Let us say a user typed "Sleep" for "Creep". How do you calculate the edit-distance between these two words using the distance matrix? Draw the matrix and calculate the distance between two words, assuming that all operations (insertion, deletion, replacement etc) have 1 point.
+\item Spelling checkers typically correct words in isolation. What in your view is the best way to attempt spelling correction in context? Why do we need context at all? Write an analysis, write like a language technologist - not as a ESL teacher.
+\item Write a program that takes a English word as input and converts it into Arpabet transcription format (use lowercase instead of upper case in Arpabet transcriptions). The format is described in Chapter 7 (first table) in Jurafsky and Martin textbook. The format is also accessible online at: \url{http://fave.ling.upenn.edu/downloads/ARPAbet.pdf}. Your program does not have to be perfect, I understand syllabic transcription for English is not a straight forward problem. But the program should demonstrate that you thought through your mapping rules, and it should show some output for any English word entered as input.  
+\item Take any one CALL system that you know of, and use or have access to. Write a (linguistic) analysis of where it works, in what cases it fails, and why it may be failing. Consider atleast two failed cases.
+\item Assume that the CALL system you are developing expects short-answer responses from students (1--3 sentences). How will you evaluate these answers automatically if (a) you have some gold standard answers to compare against (b) you don't have a reference answer? What are the possible issues you face when you begin to develop a short answer scoring program?
+\item Use the FLAIR system (\url{http://goo.gl/9vRpz4}), and study its functions. Now, write an analysis of where and how it could be useful for language learners, what are its shortcomings, and how it can be improved.
+\item Investigate how you can accept speech input from users in your program, and convert it to text (without doing any speech processing on your own!). Look for such libraries in Perl and Python that support this function for you.
+\item Let us assume you are asked to write a program to categorize English learner essays as beginner, intermediate and advanced. How will you approach the problem if a) you are given a set of 1000 human graded essays b) you are not given any such reference essays.
+\end{enumerate}
+\end{document}
+
+

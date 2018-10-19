@@ -1,0 +1,209 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\hypersetup{
+    colorlinks,%
+    citecolor=blue,%
+    filecolor=blue,%
+    linkcolor=blue,%
+    urlcolor=blue 
+    %urlcolor=mygreylink     % can put red here to better visualize the links
+}
+
+\author[Sowmya Vajjala]{Instructor: Sowmya Vajjala}
+
+\title[LING 520]{LING 520: Computational Analysis of English}
+\subtitle{Semester: FALL '16}
+
+\date{10 November 2016}
+
+\institute{Iowa State University, USA}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{frame}\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Class Outline}
+\begin{itemize}
+\item Overview of computational modeling of discourse %10min
+\item Referring expressions and anaphora resolution %10
+\item Modeling coherence
+\item Practice exercises (from Problem Set 7) %50
+\item Assignment 5 submission - 15th November.
+\end{itemize}
+%Disclaimer: There is no guarantee that all of what is taught today is 100\% relevant to every one in the class. Why learn at all? one may ask. Because you cannot predict what exactly will be useful for you 3-4 years down the lane.
+\end{frame}
+
+\begin{frame}
+\frametitle{Why model discourse? - 1}
+\begin{itemize}
+\item Let us say there is a paragraph of text: 
+\\ \textit{Donald John Trump (born June 14, 1946) is the President-elect of the United States and a businessman. He is scheduled to take office as the 45th President on January 20, 2017. As the Republican Party's nominee for president in the 2016 election, he defeated Hillary Clinton in the general election on November 8, 2016.} 
+- Who is he in second and third sentences? (referring expressions) \pause
+\item This sort of things can happen in a single sentence as well. \textit{Mary said she wanted to tell her friend she should have voted.}
+\item If all this is some sort of textual discourse, we need a model to identify the antecedents to such references (she, he etc here)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Why model discourse? - 2}
+\begin{itemize}
+\item Let us say there is a small paragraph of text: 
+\\ \textit{I like language. I like studying language. I like programming. I wanted to know how to combine both interests together and that is how I learnt about NLP.}
+\item  There is now another one:
+\\ \textit{I like language. I don't like pets. I wanted to know how to reach a compromise between these two contrasting issues and ended up enrolling in a psychology class. }
+\item What makes more sense? \pause
+\item If all this is some sort of textual discourse, we need to create a model of "coherent text" to make a computer understand what is a text that is meaningful.
+\item Note: Semantic representations we discussed yesterday still talk at the level of sentence. What we just saw goes beyond that and looks at full discourse of the text.  
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Modeling discourse}
+Two primary problems:
+\begin{itemize}
+\item Coreference resolution
+\item Modeling text coherence
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Coreference Resolution}
+\begin{itemize}
+\item Task: identify all expressions that refer to some entity in a text. In the previous example.
+\item Use: very important for almost all applied NLP tasks that go beyond a sentence: summarizing a text, question answering, extracting relations between entities in a text, machine translation (if you want to cover discourse aspects) etc. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Modeling Reference Resolution}
+\begin{itemize}
+\item Generally involves either rule based or statistical methods that look at the previous context of the pronouns or other entities, and other aspects like agreement of gender to decide if there is a antecedent for it.
+\item One ready to use approach: Stanford CoreNLP has a coreference resolution system in place. 
+\item Demo: \url{http://nlp.stanford.edu:8080/corenlp/}
+\item You should be able to use it from Python through NLTK or some other library. Figure out how. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Text Coherence: RST}
+\begin{itemize}
+\item Rhetorical Structure Theory is one of the theories of discourse in NLP. 
+\item It describes relations between sentences interms of rhetorical relations.
+\item Some example relations: antithesis, background, concession, elaboration, purpose etc.
+\item RST based parsers are available (one in Python by ETS: \url{https://github.com/EducationalTestingService/discourse-parsing})
+\item Note: See Radev's slides from discourse lecture.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Modeling Text Coherence: Some methods}
+\begin{itemize}
+\item Coh-Metrix (\url{http://141.225.42.86/CohMetrixHome/documentation_indices.html}) does a shallow discourse modeling, but very popular.
+\item "Modeling coherence in ESOL learner texts" by Yannakoudakis and Briscoe, 2012. \url{http://www.aclweb.org/anthology/W12-2004}
+\item "Modeling Local Coherence: An Entity based approach" Barzilay and Lapata, 2007. Computational Linguistics 34 (1). \url{https://people.csail.mit.edu/regina/my_papers/coherence.pdf}
+\item publications related to Brown coherence toolkit (C++ code, shared freely online. \url{https://bitbucket.org/melsner/browncoherence})
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Modeling discourse: local example}
+\begin{itemize}
+\item RWT project can be seen as one approach to model the discourse of research articles. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Modeling discourse at different levels of linguistic representation}
+\begin{itemize}
+\item word level overlap between sentences in a text (word, stem, lemma etc)
+\item Looking at specific POS tags (Nouns, Pronoun overlap)
+\item Looking at the usage of connective words (and usage of connective words as connectives)
+\item Looking at how a named entity transitions from one sentence to another (e.g., subject to object)
+\item Looking at the length of coreference chains, or connected lexical chains in the text
+\item ... ... ..
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Next Week}
+\begin{itemize}
+\item NLP applications: overview of machine translation, question answering, topic modeling
+\item NLP for CALL - Introduction
+\item Assignment 5 (submission and discussion)
+\item Final projects - status and discussion 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Exercise - 1}
+Problem Set 7, Problem 5 and 6: Go through the description of CohMetrix text analysis tool (\url{http://141.225.42.86/CohMetrixHome/documentation_indices.html}).
+Read the documentation of Referential Cohesion features there, and
+write code to calculate adjacent and global Noun overlap. Write a program to calculate adjacent and global stem overlap.
+\end{frame}
+
+\begin{frame}
+\frametitle{Exercise - 2}
+Problem Set 7, Problem 8-9: Figure out where one can find lists of English connectives, and write
+a program to count all connective words in a text. Read Coh-Metrix documentation, and figure out how to modify the
+previous program to print the number of occurrences of different connective types in text.
+\end{frame}
+
+\begin{frame}
+\frametitle{Exercise - 3}
+Problem Set 7, Problem 7: Write a program to get groups of sentences connected by a coreference
+chain using Stanford corenlp.
+\end{frame}
+
+\begin{frame}
+\frametitle{Exercise - 4}
+Problem Set 7, Problem 10: Not all connective words are actually used as connectives in all con-
+texts. Figure out how to use ”Discourse Connectives Tagger” tool
+(\url{http://www.cis.upenn.edu/~nlp/software/discourse.html}) to get
+a better estimate of connective usage in texts. Python programmers:
+figure out how to use the perl code in this tagger inside your Python
+code or somehow use the output of this code in your Python code.
+\end{frame}
+
+\begin{frame}
+\frametitle{Exercise - 5}
+Figure out how to setup and use the RST parser from ETS. If you manage to do that, think about how this is useful (if at all!) for your research interests.
+\end{frame}
+
+\end{document}
+
+%\item Overview of NLP applications: Machine Translation, Topic Modeling, Question Answering etc. 
+%One way: take task yb task: wsd, ner, srl, discourse analysis etc - get examples of code-software to talk about.
+%MT: Talk about Moses and Apertium
+%LG: NLG
+%Talk about Bonus points: Problemset 2,3,4,5 - upto 10 points possible?
+
+\begin{frame}
+\frametitle{Programming exercise - 1}
+\begin{itemize}
+\item Take any .txt version file from gutenberg.org, written by your favorite author (in English!)
+\item Read that file into your python code, and do the following using NLTK:
+\begin{enumerate}
+\item Split the file into sentences.
+\item Print the following: number of sentences in the file, average sentence length (in number of words), average word length (in number of characters), number of unique words, number of unique stems.
+\item Note 1: Once sentence splitting is done, you can ignore punctuation markers for the rest of the calculation.
+\item Note 2: You can use any stemmer you want.
+\end{enumerate}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Programming exercise - 1}
+\begin{itemize}
+\item For the same file from last slide, do the following:
+\item Read that file into your python code, and do the following using NLTK:
+\begin{enumerate}
+\item Split the file into sentences.
+\item For each sentence, print its POS tagged version as a string of tags. E.g., if you have "It is a sentence" as your sentence, and your NLTK tagger outputs the tags for this sentence as a list (or tuple or whatever), you should print the tag as a string. E.g., PRP VBZ DT NN (not as [PRP, VBZ, DT, NN] or as [(It, PRP), (is, VBZ) .. ... ])
+\end{enumerate}
+\end{itemize}
+\end{frame}

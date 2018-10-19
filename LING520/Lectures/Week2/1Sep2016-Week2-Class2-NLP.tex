@@ -1,0 +1,107 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+
+\hypersetup{
+    colorlinks,%
+    citecolor=blue,%
+    filecolor=blue,%
+    linkcolor=blue,%
+    urlcolor=blue 
+    %urlcolor=mygreylink     % can put red here to better visualize the links
+}
+
+\author[Sowmya Vajjala]{Instructor: Sowmya Vajjala}
+
+\title[LING 520]{LING 520: Computational Analysis of English}
+\subtitle{Semester: FALL '16}
+
+\date{1 September 2016}
+
+\institute{Iowa State University, USA}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{frame}\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Class outline}
+\begin{itemize}
+\item Review of tuesday's class
+\item Installing required libraries - NLTK for Python (Perl - Stanford CoreNLP module)
+\item Practice with NLTK/Perl Modules
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Problem Set 1 Discussion}
+\begin{itemize}
+\item How many problems did you manage to solve?
+\item Is there any problem you did not know how to solve?
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{A program from tuesday}
+Write a program that reads in a sample .txt file, prints the file contents, and appends one additional line to the file. 
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Installation Instructions}
+\begin{itemize}
+\item NLTK (\url{http://www.nltk.org/install.html}): Install NLTK and NLTK-Data (NLTK-Data takes time, and space!). Download what is required to do the examples from the book, for now. Follow the instructions on the website for how to do that.
+\item Perl users (I still have this, in case someone changes their mind): Follow the instructions about installing Perl modules on CPAN page (\url{http://www.cpan.org/modules/index.html}), and install the module: Lingua::StanfordCoreNLP
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Task 1: Work with interactive Python console for this}
+\begin{enumerate}
+\item Go through Chapter 1 of NLTK book. Follow the examples in Sections 1.3 and 1.4 (after typing: from nltk.book import *)
+\item Now, do the following:
+\begin{itemize}
+\item Figure out how to make your own text files work the way those example files in the book do. For example, if you have a text file called a.txt, and you read it into a string raw\_text, what should you do to convert this into NLTK text object, so that you can use those methods like .concordance, .similar etc.? You will not find the solution in this chapter. Try to do some googling and find out the solution.
+\end{itemize}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Solution}
+\begin{verbatim}
+raw_text = open("enfolkefiende.txt").read() 
+#Give full file path in your program.
+tokens = nltk.word_tokenize(raw_text) 
+nltk_style_text = nltk.Text(tokens)
+nltk_style_text.concordance("enemy")
+\end{verbatim}
+\end{frame}
+
+\begin{frame}
+\frametitle{Task 2: Work with interactive Python console for this}
+\begin{enumerate}
+\item Follow the examples in Section 2 and 3 in the first chapter. Now, that you figured how to convert your own text to nltk Text object, download your favorite English book from gutenberg.org (in .txt format) and try to get some corpus statistics such as most frequent bigrams, frequency distribution etc.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Optional, additional practice}
+\begin{itemize}
+\item Python users: Follow the examples in Chapter 1 of NLTK book, and try to do some exercise problems from the end of the chapter.
+\item Perl users: a) Install the module Lingua::EN::Tagger, and write a perl program that takes a sentence from user as input, and returns its POS tagged version as output. \\ b) Using CPAN search interface, find a concordance module in Perl, install it, and learn how to use it in your program from the examples given for the module on CPAN.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Next Week}
+\begin{itemize}
+\item Topics: Regular expressions, Tokenizing, Sentence Splitting
+\item Readings: Chapter 2 in J \&M, Chapter 3 in NLTK Book (3.4 and beyond, but you can read other parts too).
+\item Assignment 1 - submission deadline towards the end of next week! 
+\item One announcement: On 15th September, our class will take place in Ross 420. 
+\end{itemize}
+\end{frame}
+\end{document}
+
+

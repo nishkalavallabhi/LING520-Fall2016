@@ -1,0 +1,26 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{url}
+
+\begin{document}
+\begin{center}
+  Fall Semester 2016 \\ Iowa State University\\[3ex]
+  {\large ENGL 520 - Computational Analysis of English}\\[3ex]
+  \textbf{Problem Set 1} \\ \textbf{General Programming Practice \\ (ungraded)}
+\end{center}
+
+%10 questions.
+Avoiding to use built in functions as much as possible, write your own implementations for the following:
+\begin{enumerate}
+\item A program that takes a string as input, and returns its length as output. E.g., python should return 6.
+\item A program that takes a character and returns if it is a vowel or a consonant. Return "None" if anything else is entered as input.
+\item A program that takes a positive number as input and returns the sum of all integers upto that number as output. So, 4 returns 10 (1+2+3+4) as output.
+\item A program that takes a string as input, and returns the output as true if the string is a palindrome, and false if it is not.
+\item A program that takes two numbers (without decimals) as input and returns the number of digits in common between them. For example, if your inputs are: 1234 and 235, your program should return 2 (since two numbers: 2 and 3 occur in both numbers)
+\item A program that given a text file will create a new text file in which all the lines from the original file are numbered from 1 to n (where n is the number of lines in the file). source: \url{http://www.ling.gu.se/~lager/python_exercises.html} 
+\item A program that takes a text file as input, checks for lines ending in ? and returns the number of such lines as output.
+\item A program that prints today's date, week day, current time and current week's number in the year.
+\item A program to multiply two numbers without using the * sign/operation.
+
+\end{enumerate}
+
+\end{document}

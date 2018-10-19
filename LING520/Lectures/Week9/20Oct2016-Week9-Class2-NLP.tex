@@ -1,0 +1,117 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\hypersetup{
+    colorlinks,%
+    citecolor=blue,%
+    filecolor=blue,%
+    linkcolor=blue,%
+    urlcolor=blue 
+    %urlcolor=mygreylink     % can put red here to better visualize the links
+}
+
+\author[Sowmya Vajjala]{Instructor: Sowmya Vajjala}
+
+\title[LING 520]{LING 520: Computational Analysis of English}
+\subtitle{Semester: FALL '16}
+
+\date{20 October 2016}
+
+\institute{Iowa State University, USA}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{frame}\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Class Outline}
+\begin{itemize}
+\item Regarding final projects.
+\item Tomorrow's tutorial
+\item Hui-Hsien's talk
+\item Text Classification: Conclusion
+\item Midterm feedback
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Final Projects}
+\begin{itemize}
+\item Decide on what you want to do. Talk to me if you need input. 
+\item Deadline for giving a preliminary report: 5 November 2016.
+\item What it should contain: What is the project about, what is your motivation for choosing it, how will you implement it, where does NLP figure in the implementation.
+\item Length: maximum of 2 pages. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Tomorrow's tutorial - Main issues}
+\begin{itemize}
+\item Probability and Programming %45min
+\item When to use what DS.%30min
+\item For loops and If statements %30min
+\item How to call a function from one program in another. 
+\end{itemize}
+Note: I will try to address as much as I can in those 3 hours. 
+\end{frame}
+
+\begin{frame}
+\frametitle{}
+\Large Hui-Hsien's Talk
+\end{frame}
+
+\begin{frame}
+\frametitle{Mid-term feedback}
+\begin{itemize}
+\item Fill up the plus-delta table in the sheet I give, and return to me.
+\item I may or may not address all issues from everyone, but I do plan to summarize this in the class on tuesday.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Next two weeks}
+\begin{itemize}
+\item Parsing - How to do syntactic parse of sentences.
+\item Readings: Chapters 12--14 in J\&M.  
+\item Videos: Week 4 in Radev's coursera course
+\item Practical stuff: Chapters 7 and 8 in NLTK
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{If you want to develop a text classifier ...}
+\begin{enumerate}
+\item Know your data. Make sure you have sufficient amounts of data (how much?) \pause
+\item Have an idea of what features you want to investigate. Write code for feature extraction.
+\item Decide what is your learning algorithm (Naive bayes, KNN, Logistic Regression etc)
+\item Check what is the format of the classifier method is expecting (in NLTK, it is a dictionary, in some other tool, it can be a comma separated string etc)
+\item Write code to convert all texts into feature vectors of the required format.
+\item Train - Test - Evaluate whether to improve the classifier or stop.
+\item Deploy the classifier in the program which you will use to classify some new texts. 
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Text Classification - Practice}
+\begin{itemize}
+\item There are a couple of classification problem examples described in NLTK book Chapter 6 (Gender identification, Sentence Segmentation, identifying dialogue act types, recognizing textual entailment, movie review classification etc).
+\item Form into groups of 2 or 3 people, pick any one classification problem demonstrated there, and follow the examples to train a classifier.
+\item After 15 minutes, you should be ready to talk about what you did (what is the data, what is the classification problem, what are the features, what is the accuracy etc). \pause
+\item Once you finish training, and testing, and have some accuracy, figure out how to use this classifier to work with a new sentence or name etc.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Install Lightside}
+\begin{itemize}
+\item If you already finished doing the previous exercise, start working towards Assignment 4, by installing LightSide.
+\end{itemize}
+\end{frame}
+
+\end{document}
+
+
+

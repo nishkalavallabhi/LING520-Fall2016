@@ -1,0 +1,95 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\hypersetup{
+    colorlinks,%
+    citecolor=blue,%
+    filecolor=blue,%
+    linkcolor=blue,%
+    urlcolor=blue 
+    %urlcolor=mygreylink     % can put red here to better visualize the links
+}
+
+\author[Sowmya Vajjala]{Instructor: Sowmya Vajjala}
+
+\title[LING 520]{LING 520: Computational Analysis of English}
+\subtitle{Semester: FALL '16}
+
+\date{29 November 2016}
+
+\institute{Iowa State University, USA}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+
+\begin{document}
+
+\begin{frame}\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Class Outline}
+\begin{itemize}
+\item Evgeny's talk on CyWrite %approx 30 min
+\item Updates on final projects.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Evgeny's talk on CyWrite}
+\textit{Feng, H. H., Saricaoglu, A., \& Chukharev-Hudilainen, E. (2016). Automated Error Detection for Developing Grammar Proficiency of ESL Learners. CALICO Journal, 33, 49-70.}
+\\ (paper is uploaded on Blackboard) 
+\end{frame}
+
+\begin{frame} %20min
+\frametitle{Updates on final projects}
+\begin{itemize}
+\item who is doing what?
+\item If you end up finishing your final project during the break, please volunteer to give a short presentation in the class in the last week. Do not consider this as extra work. Be proud of your project and be willing to show it off and get feedback.
+\item reminder about grading for the final project: 2.5 marks for initial report, 2.5 marks for final report. 10 marks for implementation. 5 marks for oral exam. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Next Class}
+\begin{itemize}
+\item Final project presentation by Ivana and Ziwei
+\item Discussion on usefulness of NLP tools to analyze learner text.
+\end{itemize}
+\end{frame}
+\end{document}
+
+\item Case study of real-life usage of NLP for language and  content teachers \\
+\textit{Burstein  et.al.,(2014). From Teacher Professional Development to the Classroom: How NLP Technology Can Enhance Teachers’ Linguistic Awareness to Support Curriculum Development for English Language Learners. Journal of Educational Computing Research, 51(1): 119-144}
+\\ (pdf on BlackBoard) 
+\item Case study of usage of NLP for writing support for learners \\
+\textit{Burstein et.al., (2016). A Left Turn: Automated Feedback \& Activity Generation for Student Writers. To appear in the Proceedings of the 3rd Language Teaching, Language \& Technology Workshop, co-located with Interspeech, San Francisco, CA.} \\ (pdf on Blackboard)
+\end{itemize}
+Note: Two volunteers needed to present these.
+
+
+
+\begin{frame}
+\frametitle{Programming exercise - 1}
+\begin{itemize}
+\item Take any .txt version file from gutenberg.org, written by your favorite author (in English!)
+\item Read that file into your python code, and do the following using NLTK:
+\begin{enumerate}
+\item Split the file into sentences.
+\item Print the following: number of sentences in the file, average sentence length (in number of words), average word length (in number of characters), number of unique words, number of unique stems.
+\item Note 1: Once sentence splitting is done, you can ignore punctuation markers for the rest of the calculation.
+\item Note 2: You can use any stemmer you want.
+\end{enumerate}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Programming exercise - 1}
+\begin{itemize}
+\item For the same file from last slide, do the following:
+\item Read that file into your python code, and do the following using NLTK:
+\begin{enumerate}
+\item Split the file into sentences.
+\item For each sentence, print its POS tagged version as a string of tags. E.g., if you have "It is a sentence" as your sentence, and your NLTK tagger outputs the tags for this sentence as a list (or tuple or whatever), you should print the tag as a string. E.g., PRP VBZ DT NN (not as [PRP, VBZ, DT, NN] or as [(It, PRP), (is, VBZ) .. ... ])
+\end{enumerate}
+\end{itemize}
+\end{frame}

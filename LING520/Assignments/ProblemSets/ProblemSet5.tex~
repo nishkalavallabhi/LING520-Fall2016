@@ -1,0 +1,68 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{url}
+
+\begin{document}
+\begin{center}
+  Fall Semester 2016 \\ Iowa State University\\[3ex]
+  {\large ENGL 520 - Computational Analysis of English}\\[3ex]
+  \textbf{Problem Set 5} \\ \textbf{Text Classification\\ (ungraded)}
+\end{center}
+
+
+%Chapter 5 in Dickinson et.al., Resp chapter in NLTK. others in NLTK book and J&M
+\begin{enumerate}
+\item Understand what is a "Confusion matrix" in text classification. Read the Wikipedia page as a starting point. (\url{https://goo.gl/blfYtG}. Understand the notions of: precision, recall, accuracy, F1 score.
+\item Look at the confusion matrix shown in the Table below. Calculate the Precision, Recall, and F1 score for each category (A, B, C) and the overall classification accuracy of the classifier. \\
+\begin{tabular}{c|ccc}
+\hline actual \texttt{\textbackslash} predicted &A&B&C \\
+\hline A & 496 & 86 & 13\\
+  B & 145 & 1625 & 137\\
+  C & 22 & 114 & 340 \\
+\hline
+\end{tabular}
+\item Write a program that can, given a confusion matrix, calculates Precision, Recall, F1 score for each category automatically. There are a couple of issues to consider here. Some of them are: 
+\begin{itemize}
+\item How to receive input confusion matrix- perhaps as a csv file?
+\item How to customize your program output based on the number of classes (2 or 4 or 24 instead of 3 classes as in the above example)
+\end{itemize}
+\item Two confusion matrices from two classifiers, both trained using the same dataset are shown below. Which one them in your view is a better classifier? Why? 
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{r}
+  \begin{tabular}{c|ccc}
+    \hline
+    (a) act. \texttt{\textbackslash} pred. $\rightarrow$&\textbf{A}&\textbf{B}&\textbf{C}\\
+  \hline A & 496 & 86 & 13\\
+  B & 145 & 1625 & 137\\
+  C & 22 & 114 & 340 \\
+\hline
+  \end{tabular}
+
+    \begin{tabular}{c|ccc}
+    \hline
+    (b) act. \texttt{\textbackslash} pred. $\rightarrow$&\textbf{A}&\textbf{B}&\textbf{C}\\
+  \hline A & 431 & 158 & 6\\
+  B & 66 & 1767 & 74\\
+  C & 11 & 161 & 304 \\
+\hline
+  \end{tabular}
+\end{tabular}
+\caption{Confusion matrices comparison}
+\label{tab:confmatrices}
+\end{center}
+\end{table}
+\item Q1 in NLTK Chapter 6. (\url{http://www.nltk.org/book/ch06.html})
+\item Questions 6--10: Do the 5 questions given at the end of Chapter 5 in Language and Computers textbook. 
+\end{enumerate}
+\end{document}
+
+%idea: 2 big questions. Each question deals with text classification but first one has bag of words approach, second one has specific feature approach. 
+%introduce the ideas related to topic modeling, key word-phrase extraction etc.
+%show a conf matr and ask to calc different measures
+
+
+
+\item Q1: Take a existing text classification dataset, and use a bag of words approach for feature extraction, and use some ML algo
+\item Q2: Take a existing dataset with numeric features, run a off-the-shelf classn. algo.
+\item Q3: Take a existing text classn. dataset, think about appropriate features, extract them, and use some ML algo.
+\item Write a program that takes a English word as input and converts it into Arpabet transcription format (use lowercase instead of upper case in Arpabet transcriptions). The format is described in Chapter 7 (first table) in Jurafsky and Martin textbook. The format is also accessible online at: \url{http://fave.ling.upenn.edu/downloads/ARPAbet.pdf}. Your program does not have to be perfect, I understand syllabic transcription for English is not a straight forward problem. But the program should demonstrate that you thought through your mapping rules, and it should show some output for any English word entered as input.  

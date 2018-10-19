@@ -1,0 +1,24 @@
+
+from nltk.stem import LancasterStemmer
+from nltk.stem import SnowballStemmer
+from nltk.stem import PorterStemmer 
+from nltk.stem import WordNetLemmatizer
+from nltk.stem import RegexpStemmer
+
+lancaster= LancasterStemmer()
+lancaster.stem("cooking")
+lancaster.stem("cookery")
+
+regexp = RegExpStemmer('ing')
+#Removes ing if it occurs at beginning or end of the word
+regexp.stem("being")
+
+snowball = SnowballStemmer('english')
+snowball.stem("cooking")
+
+porter = PorterStemmer()
+porter.stem("believes")
+
+lemmatizer = WordNetLemmatizer()
+lemmatizer.lemmatize("believes")
+#TODO: figureout yourselves how to specify POS information in the lemmatizer!

@@ -1,0 +1,7 @@
+my_path = "/home/bangaru/Dropbox/ClassroomSlides-BothCourses/enfolkefiende.txt"
+raw_text = open(my_path).read()
+tokens = nltk.word_tokenize(raw_text)
+nltk_style_text = nltk.Text(tokens)
+nltk_style_text.concordance("brother")
+nltk_syle_text.similar("people")
+

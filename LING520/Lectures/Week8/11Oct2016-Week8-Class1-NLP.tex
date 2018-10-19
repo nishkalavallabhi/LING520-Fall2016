@@ -1,0 +1,281 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\hypersetup{
+    colorlinks,%
+    citecolor=blue,%
+    filecolor=blue,%
+    linkcolor=blue,%
+    urlcolor=blue 
+    %urlcolor=mygreylink     % can put red here to better visualize the links
+}
+
+\author[Sowmya Vajjala]{Instructor: Sowmya Vajjala}
+
+\title[LING 520]{LING 520: Computational Analysis of English}
+\subtitle{Semester: FALL '16}
+
+\date{11 October 2016}
+
+\institute{Iowa State University, USA}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{frame}\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Class Outline}
+\begin{itemize}
+\item POS tagging - review questions
+\item Text Classification: What does that mean?
+\item  What are some applications of text classification?
+\item  What does learning mean for a machine?
+\item How do you quantify what a machine learnt? 
+\item Practice exercise
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Questions about POS Tagging}
+\begin{itemize}
+\item Did you have a look at various taggers in NLTK? Did you see if they assign different tags for the same sentence? \pause
+\item Did you finish doing last question of Assignment 3? What are your general observations? \pause
+\item Did anyone try to use Regular Expressions for POS tagging? \pause
+\item Did anyone find a tagger that can be used in Python code and is not a part of NLTK? \pause
+\item Did anyone manage to get access and successfully run Biber tagger for tagging new sentences? 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Pen and paper exercise from thursday}
+\framesubtitle{Exercises 5.2--5.4 in J\&M}
+\begin{itemize}
+\item Using the tags from PTB and CLAWS7 tagsets, tag the following sentences manually, ignoring the punctuation. Compare your tags with your neighbors to discuss the agreement.
+\item Sentences: (you can also compare yourself to Stanford POS tagger, for example)
+\begin{enumerate}
+\item It is a nice night.
+\item This crap game is over a garage in Fifty-second Street...
+\item ...Nobody ever takes the newspapers she sells...
+\item He is a tall, skinny guy with a long, sad, mean-looking kisser, and a mournful voice.
+\item ... I am sitting in Mindy's restaurant putting on the gefillte fish, which is a dish I am very fond of ...
+\item When a guy and a doll get to talking pecks back and forth at each other, why there you are indeed. 
+\end{enumerate}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{}
+\begin{center}
+\Large What is text classification?
+\end{center}
+\end{frame}
+
+%2-3 slides
+\begin{frame}
+\frametitle{What is text classification}
+\begin{itemize}
+\item "Classification" in general refers to grouping entities into pre-defined set of classes, based on some properties. \pause 
+\item Text classification is one of the methods of processing textual data, where the purpose is to categorize the text into one of the pre-defined set of categories, based on the language used. \pause
+\item Let us say I have four categories of textual data: book reviews, movie reviews, electronics reviews and other reviews on amazon.com. The process of taking a review, and assigning it to one of these four categories - is text classification. 
+\item Note: "Text" can be documents, sentences or even words.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Where is text classification useful?}
+\begin{itemize}
+\item detecting whether the new email you got is spam or not spam. (spam classification)
+\item automatically detecting whether a movie review is positive or negative (opinion mining, sentiment analysis etc.)
+\item identifying if a news article is about "sports" or "politics" or "cinema" or "science"
+\item identifying whether a given word in the sentence refers to a person name or not.
+\item identifying if a group of words form a multi-word expression or not.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Text Classification - Applications}
+\begin{itemize}
+\item Think for 5 minutes, and try to list with 5 applications of text classification, atleast 3 of which should be relevant for CALL. \pause
+\item Some examples: classifying learner errors into different types (spelling, non-spelling, for example); classifying the learners into proficiency levels;
+\item General applications: sentiment analysis of product reviews on amazon, grouping search results into categories, recommending news articles related to what you are reading etc.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{What is difficult about text classification?}
+\begin{itemize}
+\item Let us take this problem of classifying English learners as: beginner, intermediate and advanced.
+\item Let us say we even have 1000 example texts for each category, classified by expert ESL teachers. 
+\item Now, how do we go about developing a classifier for doing this automatically? \pause
+\item Should we look at words? develop language models? error models? somehow capture syntax? \pause
+\item Should we combine everything? How? How do we even work with 3000 documents and come up with patterns?? 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{}
+\begin{center}
+\Large What does it mean to "learn" to classify?
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{What is Machine learning?}
+\begin{itemize}
+\item If you show a computing machine several examples of something, it can "learn" the patterns in these examples and try to identify identical occurrences for new data. \pause
+\item One example: If I show the machine several articles about Donald Trump, and several articles about Hillary, the machine should be able to learn some patterns seen in both these categories. Patterns can be use of certain words and phrases, use of statistics, syntactic structures in speeches etc. \pause
+\item Basic setup for machine learning: we have access to some set of examples, called "training set". Our goal is to make the machine learn what we want it to learn from those examples. \pause
+\item As an approximation of what it learnt, we test how it does on a "test set". If we are satisfied, we start using this learnt model in real life. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Types of Machine learning?}
+Broadly, there are two types of machine learning:
+\begin{itemize}
+\item Supervised learning: when we know our categories
+\item Unsupervised learning: when we want to find out hidden/unknown groupings.
+\end{itemize}
+Note: This is oversimplification. If you really want to know more, enroll in a machine learning course. Coursera has a great introductory course by Andrew Ng (great does not mean easy).
+\end{frame}
+
+\begin{frame}
+\frametitle{Types of Machine learning?}
+Can you think of one "supervised" learning and one "unsupervised" learning scenario for corpus data? 
+\pause 
+Supervised learning: one example is classifying all news articles into either "sports" or "non-sports" \\
+Unsupervised learning: one example is identifying what are the dominant topics discussed on Twitter in the past 10 days. 
+\end{frame}
+
+\begin{frame}
+\frametitle{How does "learning" happen?}
+Two aspects:
+\begin{itemize}
+\item Designing features for the machine to learn
+\item Developing or using an existing learning algorithm that can learn a classification function based on the values of all these features.
+\item An example "function" is learning weights for individual variables in linear regression.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Feature Design}
+\begin{itemize}
+\item What in our opinion can be useful properties to check patterns for a given classification problem?
+\item Let us take the problem of classifying an email into spam or non-spam. What can be useful properties to design such a system? \pause
+\item One more: let us say we want to classify English writing into "beginner", "intermediate" and "advanced". What can be the possible things to look at? \pause
+\item All these properties that can be relevant to perform machine based classification are called "features".
+\item The process automating feature extraction from your data (text or any other form) is called feature engineering.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Feature Design continued}
+There are two ways of doing feature engineering.
+\begin{itemize}
+\item 1. Kitchen sink strategy: In Spam classification example, consider all words or bi/tri grams as features, and leave it to the learning algorithm to choose what works.
+\item Advantage: Easy to do feature engineering, because we do not have to worry about what among those features is relevant.
+\item 2. Hand-crafted: Choosing specific features such as: "Use of all caps", "use of words from list X" for the same problem. 
+\item Advantage: It is easy to understand which features are useful for the classifier and which are not. Disadvantage: Coming up with such specific features can be time consuming.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Learning Algorithm}
+\begin{itemize}
+\item Goal of a learning algorithm is to take a feature representation of the training data (texts) and come up with a function that can assign weights to individual features, and use this function to predict the category for any new text it sees. 
+\item Let us say I have 3 features: num. Nouns, num. Verbs, num. Adjectives. I have two categories: A and B. I have 1000 example texts (500 labeled A, 500 labeled B).
+\item A learning algorithm can learn something like this: 
+\begin{enumerate}
+\item Prediction = 0.3*numNN - 0.9*numVB + 1.1*numADJ
+\item If Prediction $<=$1, category is A. else, category is B.
+\end{enumerate}
+\end{itemize}
+Note: This is just one example function I created from air. There are 100s of learning algorithms, and machine learning researchers come up with new ways to learn everyday.
+\end{frame}
+
+\begin{frame}
+\frametitle{}
+\begin{center}
+\Large Measuring "Learning" success - Evaluating text classification
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Measuring Success in Learning}
+Multiple ways. Depends on the nature of your dataset, and your application.
+\begin{itemize}
+\item Prediction accuracy on test set: typically used in most ML evaluation for text, images, videos, all sorts of things
+\item Revenue increase - in e-commerce applications
+\item False positive rate (Type 1 Error), False negatives (Type 2 error) - typically in medical applications
+\item Precision (TP/(TP+FP)), Recall (TP/(TP+FN)), F-score (2PR/(P+R)) - typically in information retrieval, text classification
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{How does this process work in real life}
+\begin{enumerate}
+\item You start with designing some features, depending on your understanding of the data.
+\item Develop a classification model using these features. Evaluate how it is doing on a held-out test set or using cross validation (what?) \pause
+\item Study the performance, decide whether to improve the learning algorithm or the feature representation. Decide on specific improvements.
+\item Keep repeating these 3 steps until you are happy with what you have.
+\end{enumerate}
+\end{frame}
+
+%Exercise 4 in Chapter 5.
+\begin{frame}
+\frametitle{A small exercise}
+\begin{enumerate}
+\item Here is a scenario: You are assigned the task of designing a system that recommends age-appropriate news items to children below 10 years of age. Is this a classification task? \pause
+\item If we have to design a system that should classify an item on google news website into "appropriate" or "inappropriate", what do you need first? \pause
+\item Assuming someone already sat and labeled 1000 news stories as appropriate, and 500 items as inappropriate, what do you need next? \pause
+\item What "features" will you look for in these documents to model "appropriateness" and "inappropriateness"? Discuss in groups of 3. Spend a few minutes on this.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{A small exercise-2}
+\begin{enumerate}
+\item Let us say you use some of these features. You take two off-the-shelf learning algorithms (let us say methodA, methodB) for text classification and develop classifiers. Now let us say you have a test set that has 500 texts labeled "appropriate", 250 texts labeled "inappropriate".
+\item \begin{table}[h]
+\begin{center}
+\begin{tabular}{r}
+  \begin{tabular}{|l|r|r|}
+    \hline
+    (a) pred. $\rightarrow$&\textbf{App.}&\textbf{Inapp.}\\
+    \hline
+    \textbf{App.}&490&10\\ \hline
+    \textbf{Inapp.}&200&50\\ \hline
+    \end{tabular}
+  \begin{tabular}{|l|r|r|}
+    \hline
+    (b) pred. $\rightarrow$&\textbf{App.}&\textbf{Inapp.}\\
+    \hline
+    \textbf{App.}&400&100\\ \hline
+    \textbf{Inapp.}&50&200\\ \hline
+    \end{tabular}
+\end{tabular}
+\caption{Confusion matrices for two scenarios}
+\end{center}
+\end{table}
+\item What is the classification accuracy for A and B respectively? \pause
+\item According to you, which one is doing better? A or B? Why? 
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Next Class}
+\begin{itemize}
+\item Two classification algorithms: Naive Bayes classifier, k-Nearest neighbours
+%Exercise: 1.1-1.5 in Chapter 6, NLTK
+\item Practice exercises with NLTK
+\end{itemize}
+\end{frame}
+
+\end{document}
+
+
+

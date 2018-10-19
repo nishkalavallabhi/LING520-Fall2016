@@ -1,0 +1,369 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+
+\hypersetup{
+    colorlinks,%
+    citecolor=blue,%
+    filecolor=blue,%
+    linkcolor=blue,%
+    urlcolor=blue 
+    %urlcolor=mygreylink     % can put red here to better visualize the links
+}
+
+\author[Sowmya Vajjala]{Instructor: Sowmya Vajjala}
+
+\title[LING 520]{LING 520: Computational Analysis of English}
+\subtitle{Semester: FALL '16}
+
+\date{23 August 2016}
+
+\institute{Iowa State University, USA}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{frame}\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Class outline}
+\begin{itemize}
+\item Introductions %15 min
+\item What is Natural Language Processing (NLP)? %15 min
+\item Course objectives and Pre-requisites %5 min
+\item Course Logistics %10min
+\item Syllabus %15min
+\item Pre-course questionnaire %15 min
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{}
+\begin{center}
+\Large Introductions
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{About me}
+\begin{enumerate}
+\item In ISU as Asst. Professor since January 2016.
+\item Prior to that, PhD student in Computational linguistics, in Germany.
+\item Taught 516 in Spring Semester
+\item Flashback: 10 fall semesters ago, in Fall 2006, I attended a similar introductory NLP course as a masters student in India!
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{About you?}
+\begin{enumerate}
+\item Name
+\item What do you do in ISU?
+\item What are your interests related to computational analysis of language?
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{}
+\begin{center}
+\Large Motivation for the course
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{What is NLP?}
+\begin{enumerate}
+\item NLP is a sub-field of Artificial intelligence that is concerned with analyzing, modeling and understanding human language using computational methods. 
+\item It explores how humans can interact with computers in human languages
+\item The eventual goal is to make computers understand (and generate) human languages, and make them communicate with humans like humans
+\item Because of its role in the process of human-computer interaction, NLP has a wide range of technological applications
+\item It is also becoming popular as a research method in a broad range of disciplines in social sciences. 
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Inter-disciplinary by nature}
+NLP is very inter-disciplinary. Draws from research in Computer Science, Linguistics, Mathematics, Statistics, Psychology etc.,
+\end{frame}
+
+\begin{frame}
+\frametitle{History of NLP}
+\begin{enumerate}
+\item Foundational ideas: 40s and 50s. WWII and Beyond.
+\item Main NLP problem of that time (and even now): Machine Translation
+\item First few decades: Work focused on the development of speech recognition systems, logic based language understanding systems, creating elaborate grammars to teach human language to computers, and automatic language generation.
+\item Late 90s on: Advent of statistical methods and machine learning
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Computational Linguistics vs NLP}
+The terms are used synonymously. However, generally, NLP is typically used by people involved in engineering and technology development, and CL is typically used by traditionally linguistics groups who adapted computational methods.
+\end{frame}
+
+\begin{frame}
+\frametitle{Where is NLP used in real-world?}
+\begin{enumerate}
+\item Apple Siri and other such software that can understand and interpret human speech (okay, partially)
+\item Google Translate and the likes
+\item Search Engines
+\item Question Answering (e.g., IBM Watson)
+\item News recommendation - related articles features in News websites
+\item Sentiment analysis of product reviews on Amazon, for example
+\item Spam classification in Gmail, Yahoomail etc
+\item Information extraction from text (e.g., identifying calendar entries automatically in gmail)
+\item Dialog systems (having interactive conversations with users, to do flight bookings etc)
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{NLP and Applied Linguistics}
+\framesubtitle{Some Practical Examples}
+What are some applications of NLP in Applied Linguistics? \pause
+\begin{enumerate}
+\item Spelling and Grammar checking 
+\item Plagiarism detection
+\item Automated content analysis and scoring of student responses
+\item Automatic generation of tests 
+\item Intelligent tutoring systems 
+\end{enumerate}
+... and so on.
+\end{frame}
+
+\begin{frame}
+\frametitle{Some EdTech companies that use NLP}
+\begin{itemize}
+\item Turnitin, LightingGrader etc
+\item ETS, Pearson etc
+\item Grammarly.com
+\item DuoLingo
+\item Cognii.com
+\end{itemize}
+... and so on
+\end{frame}
+
+\begin{frame}
+\frametitle{Some research projects relevant for language learning}
+\begin{enumerate}
+\item \href{http://samos.sfs.uni-tuebingen.de:8080/FLAIR/}{FLAIR project} @University of T\"ubingen
+\item \href{https://spraakbanken.gu.se/larka/}{LARKA CALL Platform} @Gothenburg University
+\item \href{http://aihaiyang.com/software/lca/}{Lexical Complexity Analyser} @Penn State
+\item \href{http://cce.grad-college.iastate.edu/projects/research-writing-tutor}{Research Writing Tutor} @ Iowa State
+\end{enumerate}
+.. and so on
+\end{frame}
+
+\begin{frame}
+\frametitle{}
+\begin{center}
+\Large Course Objectives and Pre-requisites
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Goals for the course}
+\begin{enumerate}
+\item Understand why language processing is hard
+\item Understand some key problems and methods in NLP
+\item Understand the limitations of NLP methods
+\item You will gain some knowledge about common text processing methods, and their applications
+\item You will also know how to apply existing language processing tools to develop your own applications
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Pre-requisities}
+\begin{enumerate}
+\item Knowledge of some programming language (Perl, Python etc.) 
+%What is knowledge of programming here???
+\item Some knowledge about linguistics, and an interest in computational analysis of human language
+\item Ability to understand problem descriptions, and write programs by yourself, understand and debug the errors you get while running the program.
+\item An understanding that this course is not a typical Applied Linguistics course and will need different kind of effort.
+\item Acknowledgement that your instructor is aware of her job and knows what it takes to learn the topics.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{}
+\begin{center}
+\Large Course Logistics
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Meeting and Location}
+\begin{itemize}
+\item  meets in Ross 312, on Tuesdays and Thursdays from 11 am-12:20 pm
+\item \textit{Office hours:} Tuesdays and thursdays, 10-11 am (please email beforehand if there are specific issues to discuss. If this time does not work for you, send an email, and we can meet at a convenient time)
+\item course website: on BlackBoard.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Credits}
+\begin{itemize}\vspace*{-.8\baselineskip}\itemsep0ex
+\item Credit Points: 3
+\\ (Expect to spend more time than you think! It is a difficult, graduate level course and needs hard work!)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{}
+\begin{center}
+Format and Grading
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Course Format}
+\begin{itemize}\itemsep2ex
+\item weekly lectures/practical sessions
+\item optional discussion forum
+\item weekly readings, sometimes additional videos.
+\item 5 assignments
+\item final exam - programming project.
+\item optional practice exercises on different topics.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Assignments}
+\begin{itemize}
+\item 5 assignments (80\%) + 1 final project (20\%)
+\item Problem sets will be given periodically for practice
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Final Exam}
+\begin{itemize}
+\item Programming project - 20 M
+\item Choose a project by the end of october
+\item Either pick something from the list I give or come up with your idea.
+\item Evaluation: Show a working program + oral exam.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Some general rules:}
+\begin{itemize}
+\item attendance: not mandatory, but recommended.
+\item missing a deadline: .. is okay, but you will not get full credit.
+\item long absence due to illness etc: please inform and follow university procedures.
+\item cheating and plagiarism: see the course handbook, and university policy against plagiarism.
+\item classroom behavior: please be punctual and do not do personal work in the class.
+\item Disability accomodation: Please speak to Disability Resources Office (DRO) to officially request an accomodation.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Other Issues}
+\begin{itemize}
+\item validating enrollment: who is enrolled? who is just here?
+\item feedback about the course: 
+\begin{enumerate}
+\item Talk to me directly, or leave anonymous feedback at: \url{https://goo.gl/qCKax9} or leave a paper feedback in my mailbox. 
+\item Be confident enough to confront me and talk to me if there is a concern. 
+\item You can talk behind my back or wait until course feedback, but you will not benefit from that.. next batches perhaps will. 
+\end{enumerate}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{}
+\begin{center}
+Syllabus
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Topics}
+\begin{itemize}
+\item Introduction to NLP
+\item Programming recap and Practice
+\item Morphological analysis
+\item Language modeling, Part of speech tagging
+\item Text classification
+\item Natural language parsing
+\item Other NLP problems: overview
+\item NLP for CALL
+\end{itemize}
+(Each topic will have an ungraded problem set for practice)
+\end{frame}
+
+\begin{frame}
+\frametitle{Assignment Deadlines}
+\begin{itemize}
+\item Assignment 1: 10 Sep 2016
+\item Assignment 2: 27 Sep 2016
+\item Assignment 3: 11 Oct 2016
+\item Assignment 4: 29 Oct 2016
+\item Assignment 5: 15 Nov 2016
+\item Final project decision + Prelim report: 5 Nov 2016
+\item Final project - presentation: December 6-13 2016
+\end{itemize}
+(All assginments are already uploaded. Final project options are up too)
+\end{frame}
+
+\begin{frame}
+\frametitle{Text Book}
+\begin{enumerate}
+\item Primary textbook: Speech and Language Processing by Jurafsky \& Martin (2nd Edition)
+\begin{itemize}
+\item Not mandatory, but very useful book in a long run, if you want to continue working on these things
+\item 2nd Edition is what I will use to prepare lectures, but 3rd Edition draft chapters are already available for free. 
+\\ \url{https://web.stanford.edu/~jurafsky/slp3/}
+\end{itemize}
+\item This is for Python programmers: NLTK Book - follow the online version. Print version is outdated. \url{http://www.nltk.org/book/}
+\end{enumerate}
+\end{frame}
+
+%one slide with "other materials"
+\begin{frame}
+\frametitle{Other Materials}
+\begin{enumerate}
+\item Coursera course: Introduction to NLP by Dragomir Radev \\ \url{https://www.coursera.org/learn/natural-language-processing} (please enroll)
+\begin{itemize}
+\item One more NLP course (taught by Jurafsky and Manning) will restart in September 2016.
+\item There used to be another, more technical course by Michael Collins. I have the lectures downloaded - anyone interested can get them from me.
+\end{itemize}
+\item Language and Computers (Dickinson, Brew and Meurers) - optional. Good to get a general overview, without getting into programming.
+\item NACLO website - good resource for some brainstorming about language processing problems. \\ \url{http://www.nacloweb.org/}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Any questions so far?}
+\end{frame}
+
+\begin{frame}
+\frametitle{Next Class ..} 
+\begin{itemize}
+\item To do before next class:
+\begin{enumerate}
+\item Read the syllabus handbook carefully
+\item Start listening Week 1 lectures in Radev's Coursera course.
+\end{enumerate}
+\item Next class: 
+\begin{enumerate}
+\item Overview of common problems and tasks in NLP
+\item Assignment 1 description
+\end{enumerate} 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{One request} 
+I need 2,3 volunteers for next tuesday's class. They should be willing to do a 5 minute demo of any programming project they did so far (e.g., in 516).
+\end{frame}
+
+\begin{frame}
+\frametitle{}
+\begin{center}
+\Large Please fill up the questionnaire
+\end{center}
+\end{frame}
+
+\end{document}
+
+

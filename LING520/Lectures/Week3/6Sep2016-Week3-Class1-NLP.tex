@@ -1,0 +1,247 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+
+\hypersetup{
+    colorlinks,%
+    citecolor=blue,%
+    filecolor=blue,%
+    linkcolor=blue,%
+    urlcolor=blue 
+    %urlcolor=mygreylink     % can put red here to better visualize the links
+}
+
+\author[Sowmya Vajjala]{Instructor: Sowmya Vajjala}
+
+\title[LING 520]{LING 520: Computational Analysis of English}
+\subtitle{Semester: FALL '16}
+
+\date{6 September 2016}
+
+\institute{Iowa State University, USA}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{frame}\titlepage
+\end{frame}
+
+%Assignment 1 submission instructions: a) input file - I will give. b) program has to run without errors. That is non-excusable. If it does not run perfectly, that is tolerable.
+
+\begin{frame}
+\frametitle{Class outline}
+\begin{itemize}
+\item Review of last week
+\item Some instructions about Assignment 1
+\item Regular expressions - review
+\item Regular expressions practice exercises
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Last Week}
+\begin{itemize}
+\item NLTK installation: was everyone successful? Did everyone manage to go through examples in Chapter 1 of NLTK book?
+\item Problem Set 1: Questions?
+\item Assignment 1 progress?
+\item Any other questions?
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Assignment 1: Some instructions}
+\begin{itemize}
+\item Your program has to run without throwing any errors, and show some output when I give input. This is non-negotiable. Any program that throws syntax errors and the likes will get a 0 score.
+\item If a program is not perfect, works for some cases, it is tolerable. You may or may not get full credit, but will never get 0.
+\item Submit in the format I asked, not in the format of your choice.
+\item When I said input sample.txt, don't imagine I will name my file sample.txt and keep it in the same directory where I run your program. Your programs should accept file path from the user as input. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\Large Regular Expressions
+\end{frame}
+
+\begin{frame}
+\frametitle{}
+\begin{enumerate}
+\item How would you define regular expressions? \pause
+\begin{itemize}
+\item It is a language to describe patterns in textual data. 
+\end{itemize}
+\item Where are regular expressions useful? \pause
+\begin{itemize}
+\item Searching inside texts, information extraction from texts
+\item Also used extensively in theoretical computer science (we are not concerned with this aspect in this class!)
+\item Substituting one pattern with another.
+\end{itemize} \pause
+\item Every commonly used programming language supports regular expressions. 
+\item Unix based operating systems have pre-installed terminal based tools such as grep, egrep etc. that allow you to use regular expressions for text processing.  
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{RegEx - a brief history}
+\begin{itemize}
+\item First described by Stephen Kleene in 1950s. Original purpose: to describe finite state machines, formal languages etc.
+\item Ken Thompson, in 1968, used this concept to match patterns in text files, in an early text editor. 
+\item By 70s, they became commonly used methods for text processing on Unix systems (most of these tools are still available as terminal based apps. in MacOS and other Unix systems)
+\item Small differences exist, but largely, RegEx syntax remains the same across languages.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{RegEx for text processing}
+What do we need?
+\begin{itemize}
+\item A corpus of texts (or a single text)
+\item A description of what we want to search for or extract
+\item A pattern that meets this description.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Simple Patterns}
+\begin{itemize}
+\item Plain sequence of characters: a pattern "Python" matches all occurrences of Python in text.
+\item Regular expressions are case-sensitive. To match "python" and "Python", you should have a pattern: [pP]ython.
+\item the pattern [abc] matches a or b or c. [pP]ython matches python or Python.
+\item patterns [a-z], [A-Z] match all lower and upper case characters respectively. [0-9] matches digits.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Use of special characters in RegEx}
+\begin{itemize}
+\item caret: [\^{}X] matches any single character that is not X. If the caret occurs anywhere else in the sequence, it is treated as a caret symbol.
+\item asterisk: zero or more occurrences of something. "ba*" matches b, ba, baa, baaa etc.
+\item plus: one or more occurrences of something. "ba+" matches ba, baa, baaa etc. "(ba)+" matches ba, baba, bababa .. 
+\item question mark: the pattern "questions?" catches question and questions. 
+\item period: just a "." matches everything. To match a period, you have to use "\textbackslash.". "p.n" matches any character between p and n in a text.
+\item .*: matches all characters. "p.*n" matches all characters between p and n.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{"Anchor" characters}
+\begin{itemize}
+\item caret, without [], when put in front of a pattern matches the beginning of a line. "\^{}The" matches lines starting with "The".
+\item \$ matches the end of the line. "Dog\textbackslash.\$" matches lines that end in "Dog."
+\item \textbackslash b matches word boundary, \textbackslash B matches non-boundary. E.g., "\textbackslash bthe\textbackslash b" matches "the" but not "other". 
+\item $|$(pipe symbol): is used to represent "or" operation. "cat$|$dog" matches "cat" or "dog".
+\item pupp(y$|$ies) matches puppy or puppies.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Advanced operators}
+\begin{itemize}
+\item \textbackslash d matches any digit. \textbackslash D matches any non-digit.
+\item \textbackslash w matches any alpha numeric character or underscore. \textbackslash W matches anything other than alphanumeric characters or underscores.
+\item \textbackslash s matches whitespace. \textbackslash S matches any non-white space character.
+\item \textbackslash n matches newline.
+\item \textbackslash t matches tab. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{The use of \{\}}
+\begin{itemize}
+\item \{n\} indicates n occcurences of a previous character/expression. "a\{2\}" matches aa.
+\item \{n,\} indicates n or more occurrences of a previous character or expression. "a\{2,\}" matches aa, aaa etc.
+\item \{m,n\} indicates m to n occurrrences. a\{2,5\} matches 2 to 5 occurrences of a's together (aa, aaa, aaaa, aaaaa)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Substitution and number operator}
+\begin{itemize}
+\item We can substitute one pattern with another. E.g., s/colour/color substitutes colour with color (syntax is for illustration. Works with some languages, may not work with python)
+\item An operator \textbackslash1 is used in regular expression syntax, to refer to a previous part of the full expression.
+\item For example, consider this pattern: s/([0-9]+)/$<$\textbackslash1$>$ replaces 99 with $<99>$. 
+\item Such numbered patterns are "memorized" and are called registers. You can have \textbackslash1, \textbackslash2 etc in complex patterns. Anything within () counts as one register.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Substitution and number operator}
+\begin{itemize}
+\item These operators are very useful in creating canned responses for standard question forms.
+\item Sometimes, they create an impression of real natural language understanding happening behind screen.
+\item Best example: Eliza program. \url{http://goo.gl/lBDD2n}
+\item Another, slightly more recent one: Alice bot \url{http://goo.gl/0tulbW}
+\item Implementing Eliza in Python: \url{http://goo.gl/nREmwN}
+\end{itemize}
+\end{frame}
+
+\begin{frame} %15min
+\frametitle{Practice writing RegEx}
+\framesubtitle{source: Exercise 2.1 in J\&M}
+Go to Pythex.org or pyregex.com or any such regular expression tester online. Choose any text you want, and write regular expressions for the following:
+\begin{enumerate}
+\item all lowercase alphabetic strings ending in b.
+\item All lines that start at the beginning of the line with a number, and that end with a word. 
+\item All lines that have both the words "the" and "of" in them (but not "then", they", "often" etc)
+\item all strings with two consecutive repeated words ("big big" but not "big bug")
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Solutions}
+\begin{itemize}
+\item all lowercase alphabetic strings ending in b: \begin{verbatim}[a-z]*b\b \end{verbatim}
+\item all lines that start at the beginning of the line with a number, and that end with a word: \begin{verbatim} ^\d.*\b[a-zA-Z]+\.$ \end{verbatim}
+\item all lines that have both the words "the" and "of" in them (but not "then", they", "often" etc): \begin{verbatim} \bthe\b.*\bof\b \end{verbatim}
+\item all strings with two consecutive repeated words ("big big" but not "big bug"): \begin{verbatim} \b(\w+)\s\1 (not \b(\w+)\b\1. Why?) \end{verbatim}
+\end{itemize}
+\end{frame}
+
+%Talk about using regular expressions in Python
+%few examples. %15min.
+\begin{frame}
+\frametitle{Python and Regular Expressions-1}
+\begin{itemize}
+\item re is the python library that supports processing with regular expressions (import re)
+\item re.compile(\textit{some pattern}) is used to compile a pattern into a "pattern" object, and use the pattern again in the program.
+\item re.search(pattern,string,*flags) is used to search for the first location of a pattern in a given string.
+\item re.match(same params) is similar to search(), but only matches the pattern at the start of the string. 
+\item re.fullmatch(same params): shows a match only if the full string matches with the pattern.
+\item Important flags: re.MULTILINE (matches regular expressions looks for matches at each line), re.DOTALL (includes newlines in matching).
+\end{itemize}
+Refer: \url{https://docs.python.org/3/library/re.html}
+\end{frame}
+
+\begin{frame}
+\frametitle{Python and Regular Expressions-2}
+\begin{itemize}
+\item re.findall(pattern,string,*flags): finds all matches for a pattern, and returns a list.
+\item re.sub(pattern,replacement,string,*flags): Replace one pattern with another. Returns the new string with replacements.
+\item re.subn(same params): Same as sub() but returns a tuple (new\_string, num. of replacements made).
+\item Tip: Use of ? after .* in Python regular expressions lets you match shortest matches. Otherwise, python matches longest possible match by default.
+\item re.split() - similar to split() of strings, but accepts patterns along with plain strings. 
+\end{itemize}
+\end{frame}
+
+%One example program
+\begin{frame}
+\frametitle{An example Python program}
+%To show various re functions.
+RegExOverview.py on Blackboard.
+\end{frame}
+
+%1 slide for writing regular expression program in Python. May be HTML parsing? 
+\begin{frame}
+\frametitle{RegEx - Programming practice}
+All wikipedia pages have links in their side panel, that links to the versions of an article in other languages. Write a Python program that uses regular expressions and string functions, and prints these links. 
+\end{frame}
+
+\begin{frame}
+\frametitle{Next class}
+\begin{itemize}
+\item Topics: Regular Expressions continued. Tokenizing, Sentence Splitting
+\item Videos: Week 2, video 7 in Radev's coursera course (12 min); Two videos from another NLP course by Jurafsky and Manning (20 min total) - All uploaded on Blackboard.
+\item Assignment 1 - submission deadline towards the end of next week! 
+\end{itemize}
+\end{frame}
+\end{document}
+
+

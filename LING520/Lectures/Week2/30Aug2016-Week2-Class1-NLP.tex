@@ -1,0 +1,226 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+
+\hypersetup{
+    colorlinks,%
+    citecolor=blue,%
+    filecolor=blue,%
+    linkcolor=blue,%
+    urlcolor=blue 
+    %urlcolor=mygreylink     % can put red here to better visualize the links
+}
+
+\author[Sowmya Vajjala]{Instructor: Sowmya Vajjala}
+
+\title[LING 520]{LING 520: Computational Analysis of English}
+\subtitle{Semester: FALL '16}
+
+\date{30 August 2016}
+
+\institute{Iowa State University, USA}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{frame}\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Class outline}
+\begin{itemize}
+\item Programming project demos %10 min
+\item Week 1 - Recap %10 min, Ask if there are any questions about the syllabus, course policies etc.
+\item Review of programming concepts %30 min
+\item Practice: Problem Set 1 %30 min
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\Large Programming project demos
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{}
+Any questions about Week 1 content, course syllabus/policies etc? \\ 
+.. or about the coursera lectures? 
+\end{frame}
+
+\begin{frame}
+\frametitle{}
+American Association of Corpus Linguistics conference is happening in ISU in a few weeks. Try to register and attend! 
+\end{frame}
+
+\begin{frame}
+\frametitle{}
+\begin{center}
+\Large Review of programming concepts
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Basic building blocks in one slide}
+\begin{itemize}
+\item Defining variables, writing different expressions to change the variables in the program.
+\pause \item Writing conditional statements (if condition, do this; else do that) \pause
+\item Writing loops (for, while) to iteratively repeat some set of expressions until some condition is met.
+\pause \item Manipulating different data structures (strings, Arrays/lists, Dictionaries/Hashes etc)
+\pause \item Reading and Writing data into files on your hard disk.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Some practice with your programming language syntax}
+\end{frame}
+
+\begin{frame}
+\frametitle{Basic Building Blocks: Variables and Expressions}
+Do the following in a program or in the interactive console.
+\begin{itemize}
+\item Define three variables: a, b, c and assign values: 3, 4, and "a" respectively.
+\item print the output of expressions: a + b, a + c
+\item execute the expression a = b and print the value of a after that.
+\item execute: a = 5, and then, print the value of (a+b)*(a-b)
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Basic Building Blocks: Conditional statements}
+Do the following in a program.
+\begin{itemize}
+\item Write a program that accepts some input from the user.
+\item If the user enters "Hello", the program prints "Hello". For any other input, the program prints "Politeness first". 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Basic Building Blocks: Loops}
+\begin{itemize}
+\item Write a program that prints numbers from 1 to 20. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Basic Building Blocks: Data Structures}
+\begin{itemize}
+\item Write a program that takes a sentence, and splits at whitespace.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Basic Building Blocks: Files}
+\begin{itemize}
+\item Write a program that reads in a sample .txt file, prints the file contents, and appends one additional line to the file. 
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Some non-syntax based exercises}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{What is this below pseudo-code doing?}
+%Palindrome
+\begin{verbatim}
+(Let us say str is a string)
+length = len(str) #number of characters in the string
+i = 0
+while i<length:
+    if str[i] != str[length-1-i]
+          return False
+    else:
+          continue
+    i = i+1
+return True
+\end{verbatim}
+\pause What is returned if str has a value "exception"? 
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{What is this below pseudo-code doing?}
+%Factorial
+\begin{verbatim}
+function/subroutine magic(n):
+if n <= 0:
+   return 0
+else if n == 1:
+   return 1
+else:
+   return magic(n-1) * n
+\end{verbatim}	
+\pause What is returned if n = 5? 6? 
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{What is this below pseudo-code doing?}
+%Stemming: Porter stemmer rules
+\begin{verbatim}
+function change(word):
+  if word.endswith("ational"):
+      replace "ational" with "ate"
+  else if word.endswith("tional"):
+      replace "tional" with "tion"
+  return word
+\end{verbatim}
+\pause What will this return for "relational" and "conditional"?
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{What happens if I change the order of the if statements?}
+\begin{verbatim}
+function change(word):
+  if word.endswith("tional"):
+      replace "tional" with "tion"
+  else if word.endswith("ational"):
+      replace "ational" with "ate"
+  return word
+\end{verbatim}
+\pause What will this return for "relational" and "conditional"?
+\\ Note: Your rules in Question 1 of Assignment 1 should look like this.
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{What is this below pseudocode doing?}
+\begin{verbatim}
+content = read(some_text_file)
+freq_data = {} #Empty dictionary. 
+words_list = split_into_words(content)
+for word in words_list:
+   length = len(word)
+   if (len > 5):
+        if word in freq_data:
+            freq_data[word] = freq_data[word] + 1
+        else:
+            freq_data[word] = 1
+display freq_data
+\end{verbatim}
+What will freq\_data contain, if we program this logic? 
+\end{frame}
+
+\begin{frame}
+\frametitle{Errors while programming}
+\begin{itemize}
+\item Syntax errors: You should know it is a syntax error by seeing the error messages (missing colons, parantheses etc)
+\pause \item Logic errors: Slightly difficult to find out, because you may not get an error message. You may only get a wrong answer. One solution: Debug your code. Put print statements in the middle, wherever you have questions.
+\pause \item Other errors: such as division by zero, inputting a decimal number when a string is expected, etc. - use try-catch/try-except blocks in your programming to handle such cases.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Start working on Problem Set 1}
+... we will briefly discuss Problem set 1 on thursday, and move on to other practice exercises. 
+
+\\ Something that can be useful: pythontutor.com lets you visualize your python code line by line, showing what variables get what values etc. 
+\end{frame}
+
+\end{document}
+
+%For thursday: NLTK, Padre installation, some practice exercises etc.
+http://perlmaven.com/how-to-install-a-perl-module-from-cpan
+
+

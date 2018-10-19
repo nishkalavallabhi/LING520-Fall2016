@@ -1,0 +1,179 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\hypersetup{
+    colorlinks,%
+    citecolor=blue,%
+    filecolor=blue,%
+    linkcolor=blue,%
+    urlcolor=blue 
+    %urlcolor=mygreylink     % can put red here to better visualize the links
+}
+
+\author[Sowmya Vajjala]{Instructor: Sowmya Vajjala}
+
+\title[LING 520]{LING 520: Computational Analysis of English}
+\subtitle{Semester: FALL '16}
+
+\date{1 December 2016}
+
+\institute{Iowa State University, USA}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{frame}\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Class Outline}
+\begin{itemize}
+\item Final project presentation by Ivana and Ziwei, and Hyunwoo
+\item Discussion about usage of NLP tools with learner language  %30min
+\end{itemize}
+\end{frame}
+
+\begin{frame} %15min
+\frametitle{}
+\Large Final project presentations
+\end{frame}
+
+\begin{frame}
+\frametitle{Discussion on usage of NLP tools with learner language }
+\begin{itemize}
+\item Have a look at Discussion.pdf uploaded in this week's content folder on BlackBoard. 
+\item It contains the non-programming questions about how existing NLP tools work with learner language, which were a part of your Assignments 3--5.
+\item Your task: form into teams of 2-3 people, discuss your answers, and come out with a set of observations as a team, for each of those assignments. 
+\item Spend some time discussing, and each team should present their conclusions after some time.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Next Week (last week!) - Readings}
+\begin{itemize}
+\item Case study of real-life usage of NLP for language and  content teachers \\
+\textit{Burstein  et.al.,(2014). From Teacher Professional Development to the Classroom: How NLP Technology Can Enhance Teachers’ Linguistic Awareness to Support Curriculum Development for English Language Learners. Journal of Educational Computing Research, 51(1): 119-144}
+\\ (pdf on BlackBoard) 
+\item Case study of usage of NLP for writing support for learners \\
+\textit{Burstein et.al., (2016). A Left Turn: Automated Feedback \& Activity Generation for Student Writers. To appear in the Proceedings of the 3rd Language Teaching, Language \& Technology Workshop, co-located with Interspeech, San Francisco, CA.} \\ (pdf on Blackboard)
+\end{itemize}
+Note: Two volunteers needed to present these.
+\end{frame}
+
+\begin{frame} %20min
+\frametitle{Next Week - Plan}
+\begin{itemize}
+\item Discussion on readings (tuesday)
+\item Revision and wrapping up
+\item Thursday: Final project presentations by Liberato, Sonca, Stephanie and any other enthusiasts. 
+\item Reminder: Final project code and report due by 9th December
+\item oral exams: 9-13 December. Fix a time by sending me an email. Time required: 10-15 min. My preferred timing: 1-4 pm on any day during that week. 
+\end{itemize}
+\end{frame}
+
+\end{document}
+
+\begin{frame}
+\frametitle{Discussion on Burstein et.al. (2014)}
+\textit{Burstein et.al,. From Teacher Professional Development to the Classroom: How NLP Technology Can Enhance Teachers’ Linguistic Awareness to Support Curriculum Development for English Language Learners. Journal of Educational Computing Research, 51(1): 119-144}
+\\ (pdf on BlackBoard) 
+\end{frame}
+
+\begin{frame}
+\frametitle{Discussion on Burstein et.al. (2016)}
+\textit{Burstein et.al., (2016). A Left Turn: Automated Feedback \& Activity Generation for Student Writers. To appear in the Proceedings of the 3rd Language Teaching, Language \& Technology Workshop, co-located with Interspeech, San Francisco, CA.} \\ (pdf on Blackboard)
+\end{frame}
+
+
+\begin{frame} %15min
+\frametitle{}
+\Large NLP for CALL - discussion
+\end{frame}
+
+\begin{frame}
+\frametitle{Where is NLP useful for CALL?}
+There are two broad uses of NLP in the context of CALL.
+\begin{itemize}
+\item Analysing the language of learners (feedback, assessment, annotations etc)
+\item Analysing the non-learner language, for learners (suggesting materials, creating tests etc) 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{}
+\Large NLP for analyzing learner language
+\end{frame}
+
+\begin{frame}
+\frametitle{NLP for CALL: analyzing learner language}
+\begin{itemize}
+\item Automated scoring of learner essays (e.g., in GRE exam)
+\item in language tutoring systems (e.g., TAGARELA, described in language and computers textbook) to create activities, give feedback, model a learner's error patterns etc.
+\item in offering on-the-fly feedback on writing (e.g., CyWrite, Grammarly, etc)
+\item in analysis and annotation of learner corpora (e.g., MERLIN \url{http://merlin-platform.eu/})
+\item (often handled seperately): Analysing and assessing spoken responses of language learners
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{NLP beyond "language form" but within "learner language"}
+\begin{itemize}
+\item Intelligent tutoring systems to teach science, psychology etc (holding dialogues with users, analysing their responses)
+\item systems like RWT which provide writing feedback, but more about content, and not about grammatical form
+\item scoring short responses of learners to questions about something they read
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{On using NLP for analyzing learner language}
+\framesubtitle{From Meurers (2012), page 2:}
+\textit{"However, there is an important difference in the goal of the NLP use in an ILTS compared to
+that in other NLP domains. NLP is made robust to gloss over errors and unexpected aspects of
+the system input with the goal of producing some result, such as a syntactic analysis returned
+by a parser, or a translation provided by a machine translation system. The traditional goal of
+the NLP in an ILTS, on the other hand, is to identify the characteristics of learner language
+and in which way the learner responses diverge from the expected targets in order to provide
+feedback to the learner. So errors here are the goal of the abstraction performed by the NLP,
+not something to be glossed over by robustness of processing."}
+\end{frame}
+
+\begin{frame}
+\frametitle{On writers aids and learner language}
+\framesubtitle{From Meurers (2012), page 2} \small
+\textit{"Writer’s aids such as the standard spell and grammar checkers (Dickinson, 2006) share the
+ILTS focus on identifying errors, but they rely on assumptions about typical errors made
+by native speakers which do not carry over to language learners. For example, Rimrott
+\& Heift (2008) observe that “in contrast to most misspellings by native writers, many L2
+misspellings are multiple-edit errors and are thus not corrected by a spell checker designed
+for native writers.” Tschichold (1999) also points out that traditional writer’s aids are not
+necessarily helpful for language learners since learners need more scaffolding than a list of
+alternatives from which to chose. Writer’s aids tools targeting language learners, such as the
+ESL Assistant (Gamon et al., 2009), therefore provide more feedback and, e.g., concordance
+views of alternatives to support the language learner in understanding the alternatives and
+choosing the right. The goal of writer’s aids is to support the second language user in writing
+a functional, well-formed text, not to support them in acquiring the language as is the goal of
+an ILTS."}
+\end{frame}
+
+\begin{frame}
+\frametitle{}
+\Large NLP for analyzing language FOR learners
+\end{frame}
+
+\begin{frame}
+\frametitle{NLP for CALL: analyzing language FOR learners}
+\begin{itemize}
+\item Selecting appropriate texts for learners (e.g., SourceRater/TextEvaluator by ETS: \url{https://texteval-pilot.ets.org/TextEvaluator/})
+\item Modifying text (e.g., simplifying) for learners (e.g., Text Adoptor research prototype by ETS described in Burstein, 2009)
+\item Language Muse system -linguistically focused instructional authoring (ETS)
+\item Input enhancement - highlighting certain grammatical parts of a webpage to make learners notice (e.g., WERTI and FLAIRS, from University of Tuebingen)
+\item Creating multiple choice questions (or other forms of questions)
+\end{itemize}
+\end{frame}
+
+%One exercise. ADD. approx 20min - continuation from yesterday.
+%Reading: comparison of parsers. EMNLP paper??
+
+\end{document}
+

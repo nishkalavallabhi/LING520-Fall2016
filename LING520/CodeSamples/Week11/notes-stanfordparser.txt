@@ -1,0 +1,29 @@
+from nltk.parse.stanford import StanfordParser
+from nltk.parse.stanford import StanfordDependencyParser
+
+from nltk.parse import DependencyGraph
+
+parser_folder = "/media/bangaru/ab73092a-5629-4a15-9038-a5a41272dd94/home/bangaru/Downloads/Research/softwaretoolsetc/" \
+"StanfordParser/stanford-parser-full-2015-04-20/"
+
+const_parser = StanfordParser(parser_folder + 'stanford-parser.jar', parser_folder + 'stanford-parser-3.5.2-models.jar')
+dep_parser = StanfordDependencyParser(parser_folder + 'stanford-parser.jar', parser_folder + 'stanford-parser-3.5.2-models.jar', model_path="edu/stanford/nlp/models/lexparser/englishPCFG.ser.gz")
+
+#Learnt the usage from commented lines in NLTK documentation for stanford parser
+#http://www.nltk.org/_modules/nltk/parse/stanford.html
+
+#Example constituent parse
+const_output = const_parser.raw_parse("This is a sentence.")
+for item in const_output:
+    print(item)
+
+#Example Dependency parse
+dep_output = dep_parser.raw_parse("The quick brown fox jumps over the lazy dog.")
+#print(type(dep_output))
+for item in dep_output:
+    #print(item.tree())
+    print(list(item.triples()))
+
+#Note to all: I tried all sorts of things before reaching here. Don't imagine I magically figured this out.
+#When you should work with a new code, you will experience this process again and again
+# even if you do code for a living for 50 years.

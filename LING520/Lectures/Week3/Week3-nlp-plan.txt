@@ -1,0 +1,26 @@
+
+20min
+* start with revising NLTK concepts from thursday class.
+* ask about problem set 1
+* ask about assignment 1
+* ask if anyone tried some of the problems at the end of NLTK chapter 1
+* ask how many read j&m chapter 2 
+
+20min
+* regular expressions - basics
+* regular expressions - practice with pythex. give some exercise.
+
+20min
+* one small problem: reading a html file and extracting all urls from that.
+
+20 min
+* Few more regular expression problems. 
+
+Thursday:
+* 15 min: Start with regex video about stanford parser and discussion
+* 15 min: tokenizing, issues involved etc. 
+  - tokenizing in non-English languages
+  15 min writing a tokenizer for English (or for any language you think it is easy to write)
+* 15 min: sentence splitting and issues involved.
+   - sentence splitting and learner language
+   15 min -practice stuff.

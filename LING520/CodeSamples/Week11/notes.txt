@@ -1,0 +1,54 @@
+groucho_grammar = nltk.CFG.fromstring("""
+ S -> NP VP
+ PP -> P NP
+ NP -> Det N | Det N PP | 'I'
+ VP -> V NP | VP PP
+ Det -> 'an' | 'my'
+ N -> 'elephant' | 'pajamas'
+ V -> 'shot'
+ P -> 'in'
+ """)
+
+grammar1 = nltk.CFG.fromstring("""
+ S -> NP VP
+ VP -> V NP | V NP PP
+ PP -> P NP
+ V -> "saw" | "ate" | "walked"
+ NP -> "John" | "Mary" | "Bob" | Det N | Det N PP
+ Det -> "a" | "an" | "the" | "my"
+ N -> "man" | "dog" | "cat" | "telescope" | "park"
+ P -> "in" | "on" | "by" | "with"
+ """)
+
+#Using different NLTK parsers with the same grammar
+parser1 = nltk.ChartParser(groucho_grammar)
+parser2 = nltk.RecursiveDescentParser(groucho_grammar)
+parser3 = nltk.ShiftReduceParser(groucho_grammar)
+parser4 = nltk.ViterbiParser(groucho_grammar)
+
+sent = ['I', 'shot', 'an', 'elephant', 'in', 'my', 'pajamas']
+
+print("Output according to Chart parser")
+for tree in parser1.parse(sent):
+  print(tree)
+
+print("Output according to RD parser")
+for tree in parser2.parse(sent):
+  print(tree)
+
+print("Output according to SR parser")
+for tree in parser3.parse(sent):
+  print(tree)
+
+print("Output according to Viterbi parser")
+for tree in parser4.parse(sent):
+  print(tree)
+
+
+grammar2 = nltk.data.load('file:mygrammar.cfg') #path is relative to your code folder.
+rd_parser = nltk.RecursiveDescentParser(grammar2)
+for tree in rd_parser.parse(sent):
+  print(tree)
+
+#Loading a pcfg grammar example
+grammar3 = nltk.data.load('file:pcfg.cfg', 'pcfg')
